@@ -179,6 +179,63 @@
 
 
 
+<style>
+  :root{--accent:#6C63FF;--bg:#0f1724;--card:#0b1220;--muted:#94a3b8}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071022 0%,#071834 60%);color:#e6eef8;line-height:1.5}
+  header{position:sticky;top:0;backdrop-filter:blur(6px);background:rgba(6,10,18,0.55);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;z-index:30}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#4dd0e1);display:flex;align-items:center;justify-content:center;font-weight:700;color:#001}
+  nav a{color:#cfe7ff;text-decoration:none;margin-left:16px;font-weight:600}
+  .container{max-width:1000px;margin:40px auto;padding:0 20px}
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+  .card{background:rgba(255,255,255,0.02);padding:22px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);transition:transform 0.3s ease, box-shadow 0.3s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+  h1{font-size:clamp(28px,4vw,44px);margin:0 0 12px}
+  p.lead{color:var(--muted);margin:0 0 18px}
+  .cta{display:flex;gap:12px}
+  .btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700;transition:all 0.3s ease}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#4dd0e1);color:#05102b}
+  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cfe7ff}
+  .btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+  .profile-img{width:100%;border-radius:12px;overflow:hidden}
+  .profile-img img{display:block;max-width:100%;animation:float 4s ease-in-out infinite;border-radius:12px}
+  img{display:block;max-width:100%}
+
+  /* Projects grid */
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+  .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.0));border:1px solid rgba(255,255,255,0.03)}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02)}
+
+  /* Skills */
+  .skills{display:flex;gap:10px;flex-wrap:wrap}
+  .skill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600}
+
+  /* Contact */
+  form{display:grid;gap:12px}
+  input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+
+  footer{padding:30px 0;color:var(--muted);text-align:center}
+
+  /* Animations */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+  section{opacity:0;transform:translateY(30px);animation:fadeInUp 0.8s forwards}
+  section:nth-of-type(1){animation-delay:0.1s}
+  section:nth-of-type(2){animation-delay:0.3s}
+  section:nth-of-type(3){animation-delay:0.5s}
+  section:nth-of-type(4){animation-delay:0.7s}
+  section:nth-of-type(5){animation-delay:0.9s}
+  @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+
+  /* Responsive */
+  @media (max-width:900px){.hero{grid-template-columns:1fr}nav{display:none}}
+</style>
+
 
 
 
