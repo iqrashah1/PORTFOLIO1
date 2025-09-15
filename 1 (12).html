@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iqra Shahzad — Portfolio</title>
+  <style>
+    /* Simple, responsive portfolio single-file template
+       Sections: Header / Hero / About / Projects / Skills / Contact / Footer
+       Replace the placeholder text & images with your own content.
+    */
+    :root{--accent:#6C63FF;--bg:#0f1724;--card:#0b1220;--muted:#94a3b8}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071022 0%,#071834 60%);color:#e6eef8;line-height:1.5}
+    header{position:sticky;top:0;backdrop-filter:blur(6px);background:rgba(6,10,18,0.55);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;z-index:30}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#4dd0e1);display:flex;align-items:center;justify-content:center;font-weight:700;color:#001}
+    nav a{color:#cfe7ff;text-decoration:none;margin-left:16px;font-weight:600}
+    .container{max-width:1000px;margin:40px auto;padding:0 20px}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+    .card{background:rgba(255,255,255,0.02);padding:22px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    h1{font-size:clamp(28px,4vw,44px);margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#4dd0e1);color:#05102b}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cfe7ff}
+    .profile-img{width:100%;border-radius:12px;overflow:hidden}
+    img{display:block;max-width:100%}
+
+    /* Projects grid */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.0));border:1px solid rgba(255,255,255,0.03)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02)}
+
+    /* Skills */
+    .skills{display:flex;gap:10px;flex-wrap:wrap}
+    .skill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+
+    footer{padding:30px 0;color:var(--muted);text-align:center}
+
+    /* Responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">YN</div>
+      <div>
+        <div style="font-weight:800">Iqra Shahzad</div>
+        <div style="font-size:12px;color:var(--muted)">Frontend Developer • UI/UX enthusiast</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h1>Hello — I'm <span style="color:var(--accent)">Iqra Shahzad</span></h1>
+        <p class="lead">I build responsive websites and delightful UI experiences. I focus on clean code, performance, and accessible design. I love JavaScript, CSS animations, and creating small, useful projects.</p>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="scrollToSection('projects')">View Projects</button>
+          <a class="btn btn-ghost" href="#contact">Contact me</a>
+        </div>
+
+        <div style="margin-top:20px">
+          <h3 style="margin:0 0 8px">Selected Projects</h3>
+          <div class="projects">
+            <article class="project">
+              <h4 style="margin:0">Project One</h4>
+              <p style="margin:8px 0 0;color:var(--muted)">A responsive landing page built with HTML, CSS and vanilla JS.</p>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            </article>
+            <article class="project">
+              <h4 style="margin:0">Project Two</h4>
+              <p style="margin:8px 0 0;color:var(--muted)">A small JavaScript game demonstrating DOM manipulation and animations.</p>
+              <div class="tags"><span class="tag">JS</span><span class="tag">Animation</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card profile-img">
+        <img src="https://i.postimg.cc/y8tBx6Mk/5.jpg" alt="Profile image">
+        <div style="padding:12px">
+          <h3 style="margin:6px 0">Contact</h3>
+          <p style="margin:0;color:var(--muted)">Email: <strong>Iqrashahzaad22@gmail.com</strong></p>
+          <p style="margin:6px 0 0;color:var(--muted)">Location: Lahore, Pakistan</p>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <a class="btn btn-ghost" href="#contact">Message</a>
+            <a class="btn btn-ghost" href="#projects">Portfolio</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" style="margin-top:28px">
+      <div class="card">
+        <h2>About me</h2>
+        <p style="color:var(--muted)">I am an enthusiastic software engineering student with a strong interest in web development and modern technologies. I enjoy building clean, responsive, and user-friendly websites while exploring areas like front-end design, cloud computing, and software architecture. My main tools include HTML, CSS, JavaScript, Git, and Figma, and I’m actively learning frameworks such as React and back-end databases like MySQL and MongoDB. I’m looking for opportunities to apply my skills to real-world projects, collaborate with teams, and grow into a full-stack developer.</p>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:20px">
+      <h2 style="margin:8px 0">Projects</h2>
+      <div class="projects">
+        <!-- Repeat project cards, swap images & links -->
+        <article class="project card">
+          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop" alt="Project screenshot" style="border-radius:8px;max-height:160px;object-fit:cover">
+          <h3>Project A</h3>
+          <p style="color:var(--muted)">Short description — what problem it solves and which tech was used.</p>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <a class="btn btn-ghost" href="#">Live</a>
+            <a class="btn btn-ghost" href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="project card">
+          <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1200&auto=format&fit=crop" alt="Project screenshot" style="border-radius:8px;max-height:160px;object-fit:cover">
+          <h3>Project B</h3>
+          <p style="color:var(--muted)">Short description.</p>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <a class="btn btn-ghost" href="#">Live</a>
+            <a class="btn btn-ghost" href="#">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" style="margin-top:20px">
+      <div class="card">
+        <h2>Skills</h2>
+        <div class="skills" style="margin-top:10px">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+          <span class="skill">Git</span>
+          <span class="skill">Figma</span>
+        </div>
+      </div>
+    </section>
+
+
+
+<section id="contact" style="margin-top:20px">
+  <div class="card">
+    <h2>Contact me</h2>
+
+    <!-- Formspree integrated form -->
+    <form action="https://formspree.io/f/mgvlbkje" method="POST">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" rows="5" placeholder="Message"></textarea>
+      <div style="display:flex;gap:10px">
+        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="reset" class="btn btn-ghost">Reset</button>
+      </div>
+    </form>
+
+    <p style="color:var(--muted);margin-top:8px">
+      I’ll get back to you as soon as possible 🚀
+    </p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
